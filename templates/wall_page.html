@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    2 - The wall
+  </title>
+</head>
+<body>
+  <h1>The text wall</h1>
+  <h3><a href='/add_text'>Add your own text!</a></h3>
+  {% if text_wall %}
+  <table id="text_wall">
+  {% for item in text_wall %}
+    <tr>
+      <td><p>{{ item }}</p></td>
+    </tr>
+  {% endfor %}
+  {% else %}
+  <p>Wall empty...</p>
+  {% endif %}
+
+</body>
+</html>
