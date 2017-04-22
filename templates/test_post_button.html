@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    Test post button
+  </title>
+</head>
+<body>
+  <h1>Full Test</h1>
+  <button type="button" onclick="send_post();"><br>
+
+  <form method="post">
+    <button type="button" value=1>1</button><br>
+    <button type="button" value=2>2</button>
+  </form>
+
+  <br>
+  <br>
+
+  <form method="post" action="/del_text">
+    <input type="text" name="index_del"><br>
+    <input type="submit" value="send"><br>
+  </form>
+
+  <br>
+  
+  <p>
+    <a href="/del_text?del_index=1"> Del 1 </a>
+  </p>
+
+
+  <script>
+  function send_post() {
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', "/del_text");
+    var input = form.createElement('input')
+    input
+    form.index_del = "1";
+    form.style.display = 'hidden';
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  </script>
+</body>
+</html>
