@@ -1,16 +1,19 @@
 <!doctype html>
 <html>
 <head>
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static',filename='main.css') }}'>
   <title>
     2 - Write something!
   </title>
 </head>
 <body>
   <h1>Add Text</h1>
-  <form method="post">
-    Write some text here, for all the world to see:<br>
-    <input type="text" name="in_text"><br>
-    <input type="submit" value="Go!"><br>
-  </form>
+  <div class="input_form">
+    <form method="post">
+      Write some text here, for all the world to see:<br>
+      <input type="text" name="in_text"><br>
+      <input type="submit" value="Go!"><br>
+    </form>
+  </div>
 </body>
 </html>
