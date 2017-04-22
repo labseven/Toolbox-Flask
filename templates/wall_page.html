@@ -13,7 +13,7 @@
   <table id="text_wall">
   {% for item in text_wall %}
     <tr>
-      <td><p>{{ item }}</p></td>
+      <td><p><a href="/del_text?del_index={{loop.index0}}"> {{ item }} </a></p></td>
     </tr>
   {% endfor %}
   {% else %}
