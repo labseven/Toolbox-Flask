@@ -6,20 +6,30 @@
   </title>
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel='stylesheet' type='text/css' href='{{ url_for('static',filename='mainpage.css') }}'>
+  <link rel='stylesheet' type='text/css' href='{{ url_for('static',filename='main.css') }}'>
+
 </head>
 <body>
-  <h1>The text wall</h1>
-  <h3><a href='/add_text'>Add your own text!</a></h3>
-  {% if text_wall %}
-  <table id="text_wall">
-  {% for item in text_wall %}
-    <tr>
-      <td><p><a href="/del_text?del_index={{loop.index0}}"> {{ item }} </a></p></td>
-    </tr>
-  {% endfor %}
-  {% else %}
-  <p>Wall empty...</p>
-  {% endif %}
+  <div>
+    <h1>The text wall</h1>
+
+    {% if text_wall %}
+    <table id="text_wall">
+    {% for item in text_wall %}
+      <tr>
+        <td><p><a href="/del_text?del_index={{loop.index0}}"> {{ item }} </a></p></td>
+      </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <p>Wall empty...</p>
+    {% endif %}
+
+    <br>
+    <a href='/add_text'><button><h3>Add your own text!</h3></button></a>
+    <br>
+    <p class="footer">Click on any text to delete it.</p>
+  </div>
 
 </body>
 </html>

@@ -29,7 +29,7 @@ def del_text():
         remove_text_from_page(request.args['del_index'])
     except:
         pass
-    
+
     return redirect('/')
 
 @app.route('/test_post')
@@ -37,8 +37,9 @@ def test_post():
     return render_template('test_post_button.html')
 
 def add_text_to_page(in_text):
-    text_wall.append(in_text)
-    pickle.dump(text_wall, open("wall.p", "wb"))
+    if in_text:
+        text_wall.append(in_text)
+        pickle.dump(text_wall, open("wall.p", "wb"))
 
 def show_add_text_form():
     return render_template('add_text.html')

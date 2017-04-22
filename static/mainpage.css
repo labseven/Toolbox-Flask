@@ -1,3 +1,8 @@
-h1 {
-  color: lightblue;
+table {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+a {
+  color: black;
+  text-decoration: none;
 }
